@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 4851efc870eb51f43a0273bf052d7704
+guid: 7eed4d5ed6744a44c81baac27fa654a0
 ModelImporter:
   serializedVersion: 20200
   internalIDToNameTable:
@@ -10,14 +10,65 @@ ModelImporter:
       74: 7403736793119416503
     second: LeftArmBicep|Run
   - first:
+      74: 5161195400769134623
+    second: Armature|Aiming
+  - first:
+      74: -5416327612971334625
+    second: Armature|Armature.001|Armature|Run
+  - first:
+      74: 2141056460093952759
+    second: Armature|Armature.001|Armature|TPose
+  - first:
+      74: 1235715974528896232
+    second: Armature|Armature.001|Armature|WalkDamaged
+  - first:
+      74: -8636784658010420103
+    second: Armature|Climbing
+  - first:
+      74: -1730066800217424199
+    second: Armature|CrouchDown
+  - first:
+      74: 371247254651735476
+    second: Armature|Crouched
+  - first:
+      74: 2252235157139878051
+    second: Armature|CrouchShoot
+  - first:
+      74: 3820035933306325064
+    second: Armature|CrouchUp
+  - first:
+      74: 8076563734728426696
+    second: Armature|Grenade
+  - first:
+      74: 2789604289822619476
+    second: Armature|Idle1
+  - first:
+      74: 213856876459495052
+    second: Armature|Idle2
+  - first:
+      74: -2783173183761764002
+    second: Armature|Idle3
+  - first:
+      74: -9006698693311996578
+    second: Armature|Idle4
+  - first:
       74: -7551964380084998518
     second: Armature|Run
+  - first:
+      74: 1453913932017221621
+    second: Armature|Shooting3
+  - first:
+      74: 1272967124308116128
+    second: Armature|Shooting5
   - first:
       74: 5152524018116331999
     second: Armature|TPose
   - first:
-      74: 4386955360893913762
-    second: Armature|WalkDamaged
+      74: 8349542763059015795
+    second: Armature|Walk
+  - first:
+      74: -765918843797106795
+    second: Gun.002|TPose
   externalObjects: {}
   materials:
     materialImportMode: 2
