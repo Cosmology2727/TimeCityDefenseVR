@@ -29,6 +29,9 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField]
     public GameObject ThisObj;
 
+    [SerializeField]
+    public GameObject ThisDestination;
+
 
     private void Start()
     {
@@ -58,7 +61,9 @@ public class EnemySpawner : MonoBehaviour
         //test
         HowMuchTime = TimeBetweenSpawns;
         var NewEnemy = Instantiate(Enemy01, transform.position, Quaternion.identity);
-        NewEnemy.transform.SetParent(ThisObj.transform);
-        NewEnemy.transform.position = NewEnemy.transform.parent.position;
+        //NewEnemy.transform.SetParent(ThisObj.transform);
+        //NewEnemy.transform.position = NewEnemy.transform.parent.position; 
+        NewEnemy.GetComponent<EnemyAI>().SpawnedFrom = ThisObj;
+        NewEnemy.GetComponent<EnemyAI>().ThisDestination = ThisDestination;
     }
 }
