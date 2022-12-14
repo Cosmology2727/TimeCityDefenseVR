@@ -456,6 +456,7 @@ GameObject:
   - component: {fileID: 4971024699136967728}
   - component: {fileID: 4450748833595717342}
   - component: {fileID: 7375984609708763809}
+  - component: {fileID: 1510591352512820621}
   m_Layer: 0
   m_Name: Arrow02
   m_TagString: projectile
@@ -728,8 +729,10 @@ MonoBehaviour:
   ThisArrow: {fileID: 6770214079390613489}
   ThisRigid: {fileID: 6770214079387453789}
   ArrowVector: {x: 0, y: 0, z: 0}
-  BloodSpurtObj: {fileID: 2317079305334997260, guid: c9c75e03634c7934f9dc8f9fa80dee31, type: 3}
-  BulletDamage: 10
+  BloodObj: {fileID: 2317079305334997260, guid: 32fde113f0cc88b489723a84b4e7d9b0, type: 3}
+  SparksObj: {fileID: 416251089823111746, guid: dfee64c1737b77b45ad52b78c31742a4, type: 3}
+  DustObj: {fileID: 660604078598729712, guid: 215574a43c92afe4894e10bca54f9232, type: 3}
+  ArrowDamage: 50
   ThisDamage: 0
   TempDamage: 0
   NowRot: {x: 0, y: 0, z: 0, w: 0}
@@ -849,6 +852,20 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!114 &1510591352512820621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6770214079390613489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30b18ddd672d5c447a548e89752089ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TimeToDestroy: 300
+  ToDestroyObj: {fileID: 6770214079390613489}
 --- !u!1 &7421629758791923788
 GameObject:
   m_ObjectHideFlags: 0

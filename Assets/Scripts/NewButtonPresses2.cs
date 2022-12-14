@@ -165,7 +165,7 @@ namespace HurricaneVR.TechDemo.Scripts
             //Debug.Log("abutton " + CurrentEquipped);
             if (!Guns)
             {
-                Debug.Log("A pushed, no guns");
+                //Debug.Log("A pushed, no guns");
                 //This is if you want it to go in the left hand
                 Grabber = GameObject.FindObjectsOfType<HVRHandGrabber>().FirstOrDefault(e => e.gameObject.activeInHierarchy);
                 Grabber.ForceRelease();

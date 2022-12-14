@@ -16,10 +16,16 @@ public class ArrowHit : MonoBehaviour
     public Vector3 ArrowVector;
 
     [SerializeField]
-    public GameObject BloodSpurtObj;
+    public GameObject BloodObj;
+    [SerializeField]
+    public GameObject SparksObj;
+    [SerializeField]
+    public GameObject DustObj;
+
+
 
     [SerializeField]
-    public int BulletDamage = 10;
+    public int ArrowDamage = 50;
     public int ThisDamage;
     public int TempDamage;
 
@@ -29,7 +35,7 @@ public class ArrowHit : MonoBehaviour
 
     private void Start()
     {
-        TimeToDeath = 5000;
+        //TimeToDeath = 5000;
         ThisRigid = GetComponent<Rigidbody>();
         InAir = true;
     }
@@ -43,12 +49,10 @@ public class ArrowHit : MonoBehaviour
         }
         if (InAir)
         {
-            NowRot.x = ThisRigid.velocity.x;
+            NowRot.x = ThisRigid.velocity.x;        //This stuff is pointless I believe, from an earlier attempt at stuff
             NowRot.y = ThisRigid.velocity.y;
             NowRot.z = ThisRigid.velocity.z;
-
-            Debug.Log(ThisRigid.velocity);
-
+            //Debug.Log(ThisRigid.velocity);
             //transform.localEulerAngles = this.transform.forward;          //Kind of almost works, it seems to always be zeroing out?
             //transform.localEulerAngles = ThisRigid.velocity;              //Kind of almost works
             //ThisRigid.transform.eulerAngles = NowRot.eulerAngles;         //Didn't work, wouldn't rotate and broke stuff
@@ -58,38 +62,55 @@ public class ArrowHit : MonoBehaviour
     // Update is called once per frame
     private void OnCollisionEnter(Collision other)
     {
-        if (InAir)
-        {
-            //Debug.Log("collision of " + other.gameObject.tag);
-        }
-
-        if (other.gameObject.tag == "StickyObj" && InAir)
-        {
-            ThisRigid.constraints = RigidbodyConstraints.FreezeAll; 
-            ArrowVector = ThisRigid.velocity;
-            InAir = false;
-            //ThisArrow.transform.parent = other.transform;                 //For some reason this was changing the rotation of the arrow
-        }
 
         if (other.gameObject.tag == "Enemy" && InAir) //Checks collision object to see if it's an enemy
         {
-            GameObject NewBloodSpurt = Instantiate(BloodSpurtObj, this.transform.position, this.transform.rotation);
+            Destroy(ThisArrow);
 
-            
+            if (other.gameObject.GetComponent<EnemyStats>().IsMech == false)
+            {
+                GameObject NewVFX = Instantiate(BloodObj, this.transform.position, this.transform.rotation);
+            }
+            else if (other.gameObject.GetComponent<EnemyStats>().IsMech == true)
+            {
+                GameObject NewVFX = Instantiate(SparksObj, this.transform.position, this.transform.rotation);
+            }
+
+
+            other.gameObject.GetComponent<EnemyStats>().EnemyHealth -= ArrowDamage;
+            Debug.Log(other.gameObject.GetComponent<EnemyStats>().EnemyHealth);
+
+            if (other.gameObject.GetComponent<EnemyStats>().EnemyHealth <= 0)
+            {
+                other.gameObject.GetComponent<EnemyStats>().OnDeath();
+            }
         }
 
-        if (other.gameObject.tag == "Hat")
+
+        else if (other.gameObject.tag != "Enemy" && InAir)
+        {
+            InAir = false;
+            GameObject NewVFX = Instantiate(DustObj, this.transform.position, this.transform.rotation);
+            Destroy(ThisArrow);
+        }
+
+        /*if (InAir)        //The goal was to make the arrow stick, but the math is stupid
+        {
+            ThisRigid.constraints = RigidbodyConstraints.FreezeAll;
+            ArrowVector = ThisRigid.velocity;
+            InAir = false;
+            //ThisArrow.transform.parent = other.transform;                 //For some reason this was changing the rotation of the arrow, PROBABLY because it's taking the local rotation into account
+            //this.transform.rotation = this.transform.rotation * Quaternion.Inverse(other.transform.rotation);
+            //Debug.Log("collision of " + other.gameObject.tag);
+        }*/
+
+        /*if (other.gameObject.tag == "Hat")
         {
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             other.transform.parent = null;
             InAir = false;
             Destroy(other.gameObject);
-        }
-
-        else if (other.gameObject.tag != "Enemy" && InAir)
-        {
-            InAir = false;
-        }
+        }*/
     }
 
     /*private void OnTriggerEnter(Collider other)

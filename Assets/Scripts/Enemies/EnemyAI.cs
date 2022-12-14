@@ -15,7 +15,7 @@ public class EnemyAI : MonoBehaviour
     {
         ThisAgent = GetComponent<NavMeshAgent>();
 
-        Debug.Log(ThisAgent.destination);
+        //Debug.Log(ThisAgent.destination);
     }
 
     // Update is called once per frame

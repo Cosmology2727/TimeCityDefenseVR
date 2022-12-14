@@ -6,12 +6,6 @@ using HurricaneVR.Framework.Weapons.Guns;
 public class EnemyStats : MonoBehaviour
 {
     [SerializeField]
-    public GameObject AiRef;
-
-    [SerializeField]
-    public Animator AnimatorObj;
-
-    [SerializeField]
     public GameObject ThisObj;
 
     [SerializeField]
@@ -22,31 +16,34 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     public int EnemyDamage = 10;
 
-    public int ToDelete = 800;
+    [SerializeField]
+    public bool IsMech;
 
-    [System.NonSerialized] public bool HasGrenade = false;
+    [SerializeField]
+    public GameObject DeathFX;
+
+    [SerializeField]
+    public GameObject BitsFX;
+
 
 
     void Start()
     {
-        EnemyHealth *= FindObjectOfType<ListVariables>().GetComponent<ListVariables>().Difficulty;
+        //EnemyHealth *= FindObjectOfType<ListVariables>().GetComponent<ListVariables>().Difficulty;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (AiRef != null)
-        {
-            if (EnemyHealth <= 0)
-            {
-                //GetComponent<EnemyRagdoll>().RagdollOn();
-                AnimatorObj.enabled = false;
-                ToDelete -= 1;
-                if (ToDelete <= 0)
-                {
-                    Destroy(ThisObj);
-                }
-            }
-        }
+
+
+    }
+
+    public void OnDeath()
+    {
+        GameObject DeathVFX = Instantiate(DeathFX, this.transform.position, this.transform.rotation);
+        DeathVFX.transform.localScale *= 1.2f;
+        GameObject BitsVFX = Instantiate(BitsFX, this.transform.position, this.transform.rotation);
+        Destroy(ThisObj);
     }
 }
