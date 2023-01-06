@@ -51,7 +51,7 @@ public class WaveStats : MonoBehaviour
             var NewEnemy = Instantiate(EnemyType, transform.position, Quaternion.identity);
             //NewEnemy.transform.SetParent(ThisObj.transform);
             //NewEnemy.transform.position = NewEnemy.transform.parent.position; 
-            NewEnemy.GetComponent<EnemyAI>().SpawnedFrom = this.GetComponent<GameObject>();
+            NewEnemy.GetComponent<EnemyAI>().SpawnedFrom = this.transform.position;
             NewEnemy.GetComponent<EnemyAI>().ThisDestination = GetComponent<EnemySpawner>().ThisDestination;
         }
     }

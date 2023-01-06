@@ -6,15 +6,15 @@ using UnityEngine.AI;
 public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent ThisAgent;
-    public GameObject SpawnedFrom;
-    public GameObject ThisDestination;
+    public Vector3 SpawnedFrom;
+    public Vector3 ThisDestination;
 
     public bool LateRun = false;
 
     void Start()
     {
         ThisAgent = GetComponent<NavMeshAgent>();
-        ThisAgent.destination = ThisDestination.transform.position;
+        ThisAgent.destination = ThisDestination;
         //Debug.Log(ThisAgent.destination);
         //ThisDestination has already been assigned when the enemy was created.
     }
@@ -22,7 +22,7 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(ThisDestination);
+        Debug.Log(ThisDestination);
         Debug.Log(ThisAgent.destination);
     }
 
@@ -44,7 +44,8 @@ public class EnemyAI : MonoBehaviour
 
     public void NewDestination()
     {
-        //ThisAgent.destination = ThisDestination.transform.position;
+        ThisDestination = SpawnedFrom;
+        ThisAgent.destination = ThisDestination;
     }
 
 }

@@ -13,12 +13,14 @@ public class EnemySpawner : MonoBehaviour
     public GameObject ThisObj;
 
     [SerializeField]
-    public GameObject ThisDestination;
+    public GameObject ThisDestinationObj;
+    [System.NonSerialized]
+    public Vector3 ThisDestination;
 
 
     private void Start()
     {
-
+        ThisDestination = ThisDestinationObj.transform.position;
     }
 
     void FixedUpdate()

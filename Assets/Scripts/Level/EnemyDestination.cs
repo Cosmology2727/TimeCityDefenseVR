@@ -24,22 +24,27 @@ public class EnemyDestination : MonoBehaviour
     public int MatsTakenAllowed = 10;
 
     [System.NonSerialized]
-    public GameObject SpawnedFrom;
+    public Vector3 SpawnedFrom;
 
 
     void Start()
     {
-        DestinationPos = GetComponent<Transform>().position;
+        //DestinationPos = GetComponent<Transform>().position;
     }
 
     public void OnTriggerEnter(Collider other)
     {
+        //Debug.Log("boop");
         //This if statement runs if it's a materials exit, and changes the enemy to return to it's origin.
-        if (other.tag == "Enemy" && IsMats)
+        if (IsMats == true)
         {
-            Debug.Log("boop");
-            other.GetComponent<EnemyAI>().ThisDestination = SpawnedFrom;
-            other.GetComponent<EnemyAI>().NewDestination();
+            if (other.tag == "Enemy")
+            {
+                Debug.Log("boop2");
+                //other.transform.root.GetComponent<EnemyAI>().ThisDestination = SpawnedFrom;
+                other.transform.root.GetComponent<EnemyAI>().NewDestination();
+            }
+
         }
     }
 }
