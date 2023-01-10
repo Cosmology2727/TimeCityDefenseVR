@@ -11,6 +11,12 @@ public class EnemyAI : MonoBehaviour
 
     public bool LateRun = false;
 
+    [System.NonSerialized]
+    public bool IsCarrying = false;
+
+    [SerializeField]
+    public GameObject CarriedMat;
+
     void Start()
     {
         ThisAgent = GetComponent<NavMeshAgent>();
@@ -22,8 +28,8 @@ public class EnemyAI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(ThisDestination);
-        Debug.Log(ThisAgent.destination);
+        //Debug.Log(ThisDestination);
+        //Debug.Log(ThisAgent.destination);
     }
 
     private void LateUpdate()
@@ -44,8 +50,13 @@ public class EnemyAI : MonoBehaviour
 
     public void NewDestination()
     {
+        if (IsCarrying)
+        {
+            CarriedMat.SetActive(true);
+        }
         ThisDestination = SpawnedFrom;
         ThisAgent.destination = ThisDestination;
+        //NEED TO VISUALLY CHANGE THE ENEMY TO LOOK LIKE THEY'RE CARRYING THE MATS
     }
 
 }
