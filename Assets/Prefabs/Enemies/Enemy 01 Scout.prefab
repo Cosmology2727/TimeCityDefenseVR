@@ -423,9 +423,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ThisAgent: {fileID: 0}
-  SpawnedFrom: {fileID: 0}
-  ThisDestination: {fileID: 0}
+  SpawnedFrom: {x: 0, y: 0, z: 0}
+  ThisDestination: {x: 0, y: 0, z: 0}
   LateRun: 0
+  CarriedMat: {fileID: 0}
 --- !u!1 &736025445473838102
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,7 +4385,6 @@ GameObject:
   - component: {fileID: 5992610933188164995}
   - component: {fileID: 5921729988281458908}
   - component: {fileID: 2775224853306592968}
-  - component: {fileID: 8118957043699289248}
   m_Layer: 0
   m_Name: Heart.001
   m_TagString: Untagged
@@ -4455,23 +4455,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8118957043699289248
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8529574001080976208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 7b1411db99e5e8743af118c0099d7ad3, type: 2}
 --- !u!1 &8587183177509802264
 GameObject:
   m_ObjectHideFlags: 0

@@ -66,6 +66,7 @@ public class ArrowHit : MonoBehaviour
         if (other.gameObject.tag == "Enemy" && InAir) //Checks collision object to see if it's an enemy
         {
             Destroy(ThisArrow);
+            other.gameObject.GetComponent<EnemyAI>().AnimatorRef.Play("Armature_Armature_001_Armature_WalkDamaged");
 
             if (other.gameObject.GetComponent<EnemyStats>().IsMech == false)
             {
@@ -78,7 +79,7 @@ public class ArrowHit : MonoBehaviour
 
 
             other.gameObject.GetComponent<EnemyStats>().EnemyHealth -= ArrowDamage;
-            Debug.Log(other.gameObject.GetComponent<EnemyStats>().EnemyHealth);
+            //Debug.Log(other.gameObject.GetComponent<EnemyStats>().EnemyHealth);
 
             if (other.gameObject.GetComponent<EnemyStats>().EnemyHealth <= 0)
             {
