@@ -20,6 +20,16 @@ public class EnemyAI : MonoBehaviour
     [SerializeField]
     public GameObject CarriedMat;
 
+    [SerializeField]
+    public bool IsRangedAttack;
+
+    [SerializeField]
+    public GameObject AttackObj;
+
+    [SerializeField]
+    public GameObject BulletOrigin;
+
+
     void Start()
     {
         ThisAgent = GetComponent<NavMeshAgent>();
@@ -47,10 +57,21 @@ public class EnemyAI : MonoBehaviour
         }
     }*/
 
-    public void ShootStart()
+    public void AttackStart()
     {
         AnimatorRef.SetBool("InRange", true);
-        ThisAgent.speed = 0;
+
+        if (IsRangedAttack == false)
+        {
+            ThisAgent.speed = 0;
+            AnimatorRef.SetBool("Walk", false);
+        }
+    }
+
+    public void AttackStop()
+    {
+        AnimatorRef.SetBool("InRange", false);
+        AnimatorRef.SetBool("Walk", true);
     }
 
     public void NewDestination()
@@ -64,4 +85,10 @@ public class EnemyAI : MonoBehaviour
         //NEED TO VISUALLY CHANGE THE ENEMY TO LOOK LIKE THEY'RE CARRYING THE MATS
     }
 
+    public void Attack()
+    {
+        Debug.Log("1" + ThisDestination);
+        GameObject NewBullet = Instantiate(AttackObj, BulletOrigin.transform.position, this.transform.rotation);
+        NewBullet.GetComponent<BulletMove>().DestinationObj = ThisDestination;
+    }
 }

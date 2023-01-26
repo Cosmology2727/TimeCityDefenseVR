@@ -23,9 +23,6 @@ public class WaveStats : MonoBehaviour
     public int HowManyToSpawn = 10;
 
 
-
-
-
     [System.NonSerialized]
     public GameObject LevelStatsObj;
 

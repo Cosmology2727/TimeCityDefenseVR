@@ -339,7 +339,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2181857950721346608}
-  - component: {fileID: 5179606690912132536}
+  - component: {fileID: 5498699521207491892}
+  - component: {fileID: 5344462856008416889}
   m_Layer: 0
   m_Name: RangedRange
   m_TagString: Untagged
@@ -361,8 +362,8 @@ Transform:
   m_Father: {fileID: 2686333050012459837}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &5179606690912132536
-BoxCollider:
+--- !u!135 &5498699521207491892
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -372,8 +373,21 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 6, y: 1, z: 5}
+  m_Radius: 4.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5344462856008416889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7014739212120117730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4776e422ec6bf4fa5821e6c6804bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsRanged: 1
 --- !u!1 &7197755855965021882
 GameObject:
   m_ObjectHideFlags: 0
@@ -465,6 +479,7 @@ GameObject:
   m_Component:
   - component: {fileID: 718793699233523765}
   - component: {fileID: 3395975167473082429}
+  - component: {fileID: 2981530415341599312}
   m_Layer: 0
   m_Name: MeleeRange
   m_TagString: Untagged
@@ -497,5 +512,18 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 2, y: 1, z: 1.36}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2981530415341599312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7864557786546703761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa4776e422ec6bf4fa5821e6c6804bd2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsRanged: 0
