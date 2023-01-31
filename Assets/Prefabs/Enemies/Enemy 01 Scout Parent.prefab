@@ -470,7 +470,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 8146987677447950078}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
+  m_Radius: 0.26
   m_Speed: 1.3
   m_Acceleration: 8
   avoidancePriority: 50
@@ -497,8 +497,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   AnimatorRef: {fileID: 6937725144415525621}
   ThisAgent: {fileID: 0}
-  SpawnedFrom: {x: 0, y: 0, z: 0}
-  ThisDestination: {x: 0, y: 0, z: 0}
+  SpawnedFrom: {fileID: 0}
+  ThisDestination: {fileID: 0}
   LateRun: 0
   CarriedMat: {fileID: 3253285665354396106}
   IsRangedAttack: 1

@@ -11,6 +11,8 @@ TagManager:
   - Hat
   - Gun
   - Bullet
+  - EnemyBullet
+  - DestinationGate
   layers:
   - Default
   - TransparentFX
@@ -27,7 +29,7 @@ TagManager:
   - Bullet
   - EnemyBullet
   - PlayerHitbox
-  - 
+  - DestinationGate
   - 
   - 
   - 

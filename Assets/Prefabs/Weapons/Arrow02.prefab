@@ -730,7 +730,7 @@ MonoBehaviour:
   ThisRigid: {fileID: 6770214079387453789}
   ArrowVector: {x: 0, y: 0, z: 0}
   BloodObj: {fileID: 2317079305334997260, guid: 32fde113f0cc88b489723a84b4e7d9b0, type: 3}
-  SparksObj: {fileID: 416251089823111746, guid: dfee64c1737b77b45ad52b78c31742a4, type: 3}
+  SparksObj: {fileID: 416251089823111746, guid: b9b594ba14d0a6d4ea7a4f25b96937c2, type: 3}
   DustObj: {fileID: 660604078598729712, guid: 215574a43c92afe4894e10bca54f9232, type: 3}
   ArrowDamage: 50
   ThisDamage: 0

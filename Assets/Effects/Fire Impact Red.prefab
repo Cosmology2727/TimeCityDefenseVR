@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 416251089823111759}
   - component: {fileID: 5932532256263279031}
   m_Layer: 0
-  m_Name: Fire Impact 1
+  m_Name: Fire Impact Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,6 +28,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 8751366870298224197}
   - {fileID: 6301608473481969982}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -270,17 +271,17 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.14590168, b: 1, a: 1}
-        key1: {r: 0, g: 1, b: 0.9909406, a: 1}
-        key2: {r: 1, g: 0.75841296, b: 0.3207547, a: 0}
+        key0: {r: 1, g: 0.9531058, b: 0.17647058, a: 1}
+        key1: {r: 1, g: 0.75841296, b: 0.3207547, a: 1}
+        key2: {r: 0.24528301, g: 0.07153493, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
         ctime0: 32768
-        ctime1: 33539
-        ctime2: 39899
+        ctime1: 33056
+        ctime2: 34242
         ctime3: 0
         ctime4: 0
         ctime5: 0
@@ -6289,8 +6290,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0, g: 0.8006325, b: 1, a: 0}
-        key1: {r: 0.023758085, g: 0, b: 0.78431374, a: 1}
+        key0: {r: 1, g: 0.75, b: 0, a: 0}
+        key1: {r: 0.7830189, g: 0.3027492, b: 0, a: 1}
         key2: {r: 1, g: 0, b: 0.5481839, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -14901,15 +14902,15 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.17647058, g: 0.23433337, b: 1, a: 1}
-        key1: {r: 0, g: 0.9111047, b: 1, a: 1}
+        key0: {r: 1, g: 0.9531058, b: 0.17647058, a: 1}
+        key1: {r: 1, g: 0.75841296, b: 0.3207547, a: 1}
         key2: {r: 0.24528301, g: 0.07153493, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
-        ctime0: 32382
+        ctime0: 32768
         ctime1: 33056
         ctime2: 34242
         ctime3: 0
@@ -19576,7 +19577,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2974246150759035526
 Transform:
   m_ObjectHideFlags: 0
@@ -19602,7 +19603,7 @@ Light:
   serializedVersion: 10
   m_Type: 2
   m_Shape: 0
-  m_Color: {r: 0, g: 0.25272036, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.45679283, b: 0, a: 1}
   m_Intensity: 5
   m_Range: 15
   m_SpotAngle: 30
@@ -19705,7 +19706,7 @@ Transform:
   - {fileID: 5112372043659696268}
   - {fileID: 2974246150759035526}
   m_Father: {fileID: 416251089823111759}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &5369635846108397958
 ParticleSystem:
@@ -25861,8 +25862,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.63529414, g: 0.9048929, b: 1, a: 0}
-        key1: {r: 0.2679245, g: 0.2709486, b: 1, a: 1}
+        key0: {r: 1, g: 0.88257074, b: 0.6367924, a: 0}
+        key1: {r: 1, g: 0.88257074, b: 0.6367924, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0.3254902}
         key4: {r: 0, g: 0, b: 0, a: 0.19607843}
@@ -30735,8 +30736,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.65963376, g: 0.63529414, b: 1, a: 0}
-        key1: {r: 0, g: 0.6588206, b: 1, a: 1}
+        key0: {r: 1, g: 0.88257074, b: 0.6367924, a: 0}
+        key1: {r: 1, g: 0.88257074, b: 0.6367924, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 1}
         key3: {r: 0, g: 0, b: 0, a: 0.19607843}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -34470,7 +34471,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.054901958, g: 0.6493864, b: 1, a: 1}
+      maxColor: {r: 1, g: 0.6642476, b: 0.055999994, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -39122,3 +39123,81 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1001 &5657695650353506722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 416251089823111759}
+    m_Modifications:
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.369419
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9640821
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -28.798264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337500706107470275, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: HowMany
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7337500706107470275, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: ThisSFX1
+      value: 
+      objectReference: {fileID: 8300000, guid: dd4744f07233b664585e3d6d3edf199a, type: 3}
+    - target: {fileID: 7337500706107470275, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: ThisSFX2
+      value: 
+      objectReference: {fileID: 8300000, guid: e61957f25b0a7f847a1405b690a27d49, type: 3}
+    - target: {fileID: 7337500706107470275, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: ThisSFX3
+      value: 
+      objectReference: {fileID: 8300000, guid: c877e749d3c85f447ac5b8a484774a56, type: 3}
+    - target: {fileID: 9034754620935449982, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: m_Name
+      value: SFXObj
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+--- !u!4 &8751366870298224197 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4032751341836734439, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+  m_PrefabInstance: {fileID: 5657695650353506722}
+  m_PrefabAsset: {fileID: 0}

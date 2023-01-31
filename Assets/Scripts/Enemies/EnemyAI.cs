@@ -9,8 +9,8 @@ public class EnemyAI : MonoBehaviour
     public Animator AnimatorRef;
 
     public NavMeshAgent ThisAgent;
-    public Vector3 SpawnedFrom;
-    public Vector3 ThisDestination;
+    public GameObject SpawnedFrom;
+    public GameObject ThisDestination;
 
     public bool LateRun = false;
 
@@ -33,7 +33,7 @@ public class EnemyAI : MonoBehaviour
     void Start()
     {
         ThisAgent = GetComponent<NavMeshAgent>();
-        ThisAgent.destination = ThisDestination;
+        ThisAgent.destination = ThisDestination.transform.position;
         //Debug.Log(ThisAgent.destination);
         //ThisDestination has already been assigned when the enemy was created.
     }
@@ -81,13 +81,13 @@ public class EnemyAI : MonoBehaviour
             CarriedMat.SetActive(true);
         }
         ThisDestination = SpawnedFrom;
-        ThisAgent.destination = ThisDestination;
+        ThisAgent.destination = ThisDestination.transform.position;
         //NEED TO VISUALLY CHANGE THE ENEMY TO LOOK LIKE THEY'RE CARRYING THE MATS
     }
 
     public void Attack()
     {
-        Debug.Log("1" + ThisDestination);
+        //Debug.Log("EnAI " + ThisDestination + " " + ThisDestination.transform.position);
         GameObject NewBullet = Instantiate(AttackObj, BulletOrigin.transform.position, this.transform.rotation);
         NewBullet.GetComponent<BulletMove>().DestinationObj = ThisDestination;
     }

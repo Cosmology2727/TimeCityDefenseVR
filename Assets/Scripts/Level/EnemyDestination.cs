@@ -18,6 +18,7 @@ public class EnemyDestination : MonoBehaviour
     public bool IsMats = false;
     [SerializeField]
     public float GateHealth = 1000;
+    [System.NonSerialized] public bool IsGateDead = false;
     [SerializeField]
     public int EscapeesAllowed = 10;
     [SerializeField]
@@ -33,6 +34,13 @@ public class EnemyDestination : MonoBehaviour
     [SerializeField]
     public GameObject[] MatsObjs;
     private int WhileInt = 0;
+
+    [SerializeField]
+    public GameObject GateVisual;
+    [SerializeField]
+    public GameObject ExplodeGate;
+    [SerializeField]
+    public GameObject HitFX;
 
 
     void Start()
@@ -79,8 +87,31 @@ public class EnemyDestination : MonoBehaviour
                         }
                     }
                     other.transform.root.GetComponent<EnemyAI>().NewDestination();
-                    WhileInt = 0;   
+                    WhileInt = 0;
                 }
+            }
+        }
+    }
+    private void OnCollisionEnter(Collision other)
+    {
+        
+        if (IsGate == true)
+        {
+            if ((other.gameObject.tag == "EnemyBullet") && (IsGateDead == false))
+            {
+                GameObject NewHitFX = Instantiate(HitFX, other.transform.position, this.transform.rotation);
+                //Debug.Log("yup");
+                GateHealth -= other.transform.root.GetComponent<BulletMove>().BulletDamage;
+                //Debug.Log("gate hit");
+                if (GateHealth <= 0)
+                {
+                    IsGateDead = true;
+                    //Debug.Log("gate dead");
+                    GameObject NewExplosion = Instantiate(ExplodeGate, transform.position, this.transform.rotation);
+                    NewExplosion.transform.localScale *= 5;
+                    GateVisual.SetActive(false);
+                }
+                Destroy(other.transform.root.gameObject);
             }
         }
     }

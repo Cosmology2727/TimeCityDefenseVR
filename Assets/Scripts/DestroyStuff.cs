@@ -24,7 +24,7 @@ public class DestroyStuff : MonoBehaviour
         TimeToDestroy -= 1;
         if (TimeToDestroy < 0)
         {
-            Debug.Log("destroy ");
+            //Debug.Log("destroy ");
             Destroy(ToDestroyObj);
         }
     }

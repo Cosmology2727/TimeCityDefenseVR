@@ -12,7 +12,18 @@ public class LevelStats : MonoBehaviour
     [System.NonSerialized]
     public int TotalWaves;
     [System.NonSerialized]
-    public int CurrrentWave;
+    public int CurrentWave = 1;
+
+    [System.NonSerialized]
+    public int CurrentEnemies = 0;
+    [System.NonSerialized]
+    public int EnemiesToSpawn = 0;
+    [System.NonSerialized]
+    public int EnemiesKilled = 0;
+
+    [SerializeField]
+    public GameObject[] WaveObjs;
+
 
     [SerializeField]
     public GameObject EnemySpawner1;
@@ -31,15 +42,26 @@ public class LevelStats : MonoBehaviour
     [SerializeField]
     public GameObject EnemySpawner8;
 
+    public WaveStats[] WaveStatsRefs;
 
 
     void Start()
     {
-        
+        WaveStatsRefs = GameObject.FindObjectsOfType<WaveStats>();
+        NewWave();
+
     }
 
     void Update()
     {
         
+    }
+
+    public void NewWave()
+    {
+            WaveStatsRefs[CurrentWave].CheckWave();
+        
+
+
     }
 }
