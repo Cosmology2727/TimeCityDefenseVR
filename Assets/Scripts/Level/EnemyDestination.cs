@@ -18,6 +18,13 @@ public class EnemyDestination : MonoBehaviour
     public bool IsMats = false;
     [SerializeField]
     public float GateHealth = 1000;
+    [System.NonSerialized]
+    public float GateHealthMax;
+    [SerializeField]
+    public GameObject GateHealthObj;
+    [System.NonSerialized]
+    public Vector3 GateHealthV3;
+
     [System.NonSerialized] public bool IsGateDead = false;
     [SerializeField]
     public int EscapeesAllowed = 10;
@@ -46,7 +53,24 @@ public class EnemyDestination : MonoBehaviour
     void Start()
     {
         //DestinationPos = GetComponent<Transform>().position;
-        CurrentMats = TotalMats;
+        if (IsMats)
+        {
+            CurrentMats = TotalMats;
+        }
+        if (IsGate)
+        {
+            GateHealthMax = GateHealth;
+            GateHealthV3 = GateHealthObj.transform.localScale;
+        }
+    }
+
+    private void Update()
+    {
+        if (IsGate)
+        {
+            GateHealthV3.x = GateHealth / GateHealthMax; ;
+            GateHealthObj.transform.localScale = GateHealthV3;
+        }
     }
 
     public void OnTriggerEnter(Collider other)

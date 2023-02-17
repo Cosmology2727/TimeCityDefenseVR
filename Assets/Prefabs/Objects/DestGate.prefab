@@ -27,8 +27,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1750138573060730897}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.40000004, y: 0, z: -0.04999999}
-  m_LocalScale: {x: 0.8000001, y: 0.20000002, z: 0.10000001}
+  m_LocalPosition: {x: -0.40000004, y: 0, z: -0.33}
+  m_LocalScale: {x: 0.8, y: 0.1, z: 0.5}
   m_Children: []
   m_Father: {fileID: 6853946334719128035}
   m_RootOrder: 0
@@ -120,7 +120,7 @@ Transform:
   m_GameObject: {fileID: 1845262145646103962}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.40000004, y: 0.25, z: 0.75}
-  m_LocalScale: {x: 1, y: 0.5, z: 5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4609719781840340200}
   m_Father: {fileID: 5892447740177829979}
@@ -323,6 +323,7 @@ MonoBehaviour:
   IsEscape: 0
   IsMats: 0
   GateHealth: 1000
+  GateHealthObj: {fileID: 1845262145646103962}
   EscapeesAllowed: 10
   TotalMats: 10
   MatsObjs: []

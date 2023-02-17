@@ -496,7 +496,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AnimatorRef: {fileID: 6937725144415525621}
-  ThisAgent: {fileID: 0}
+  ThisAgent: {fileID: 327646492874236039}
   SpawnedFrom: {fileID: 0}
   ThisDestination: {fileID: 0}
   LateRun: 0

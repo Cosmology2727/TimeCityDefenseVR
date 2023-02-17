@@ -32,6 +32,8 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
+        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies += 1;
+        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().EnemiesToSpawn -= 1;
         ThisAgent = GetComponent<NavMeshAgent>();
         ThisAgent.destination = ThisDestination.transform.position;
         //Debug.Log(ThisAgent.destination);
@@ -60,10 +62,9 @@ public class EnemyAI : MonoBehaviour
     public void AttackStart()
     {
         AnimatorRef.SetBool("InRange", true);
-
+        ThisAgent.speed = 0;
         if (IsRangedAttack == false)
         {
-            ThisAgent.speed = 0;
             AnimatorRef.SetBool("Walk", false);
         }
     }
@@ -82,7 +83,6 @@ public class EnemyAI : MonoBehaviour
         }
         ThisDestination = SpawnedFrom;
         ThisAgent.destination = ThisDestination.transform.position;
-        //NEED TO VISUALLY CHANGE THE ENEMY TO LOOK LIKE THEY'RE CARRYING THE MATS
     }
 
     public void Attack()

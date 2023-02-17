@@ -41,6 +41,15 @@ public class EnemyStats : MonoBehaviour
 
     public void OnDeath()
     {
+        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies -= 1;
+        if ((FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies + FindObjectOfType<LevelStats>().GetComponent<LevelStats>().EnemiesToSpawn) == 0)
+        {
+            FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentWave += 1;
+            if (FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentWave > FindObjectOfType<LevelStats>().GetComponent<LevelStats>().TotalWaves)
+                {
+                Debug.Log("WINNER WINNER CHICKEN DINNER");
+                }
+        }
         GameObject DeathVFX = Instantiate(DeathFX, this.transform.position, this.transform.rotation);
         DeathVFX.transform.localScale *= 1.2f;
         GameObject BitsVFX = Instantiate(BitsFX, this.transform.position, this.transform.rotation);

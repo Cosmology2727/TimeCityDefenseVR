@@ -13,6 +13,9 @@ public class SFXCall : MonoBehaviour
     public int ThisChoice;
 
     [SerializeField]
+    public bool PlayOnAwake = true;
+
+    [SerializeField]
     public AudioClip ThisSFX1;
     [SerializeField]
     public AudioClip ThisSFX2;
@@ -26,6 +29,34 @@ public class SFXCall : MonoBehaviour
 
 
     void Start()
+    {
+        if (PlayOnAwake)
+        {
+            ThisChoice = (Random.Range(1, HowMany + 1));
+            if (ThisChoice == 1)
+            {
+                AudSource.PlayOneShot(ThisSFX1);
+            }
+            else if (ThisChoice == 2)
+            {
+                AudSource.PlayOneShot(ThisSFX2);
+            }
+            else if (ThisChoice == 3)
+            {
+                AudSource.PlayOneShot(ThisSFX3);
+            }
+            else if (ThisChoice == 4)
+            {
+                AudSource.PlayOneShot(ThisSFX4);
+            }
+            else if (ThisChoice == 5)
+            {
+                AudSource.PlayOneShot(ThisSFX5);
+            }
+        }
+    }
+
+    public void PlaySound()
     {
         ThisChoice = (Random.Range(1, HowMany + 1));
         if (ThisChoice == 1)
@@ -48,10 +79,6 @@ public class SFXCall : MonoBehaviour
         {
             AudSource.PlayOneShot(ThisSFX5);
         }
-    }
 
-    void Update()
-    {
-        
     }
 }

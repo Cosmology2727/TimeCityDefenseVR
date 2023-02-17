@@ -58658,6 +58658,10 @@ PrefabInstance:
       propertyPath: ThisSFX1
       value: 
       objectReference: {fileID: 8300000, guid: 5efb897d29077b14f88a8f97824d5380, type: 3}
+    - target: {fileID: 7337500706107470275, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
+      propertyPath: PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9034754620935449982, guid: 68b2bb87f84ad9544ab2638066efd609, type: 3}
       propertyPath: m_Name
       value: SFXObj

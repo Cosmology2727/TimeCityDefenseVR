@@ -7,10 +7,10 @@ public class LevelStats : MonoBehaviour
     //Takes the CityModifications and applies it to the specifics for this level
 
     [SerializeField]
-    public int NumberOfWaves;
+    public int NumberOfWaves; //This is how many waves the level itself has, before modifiers
 
     [System.NonSerialized]
-    public int TotalWaves;
+    public int TotalWaves; //This is the TOTAL amount of waves, after all modifiers
     [System.NonSerialized]
     public int CurrentWave = 1;
 
@@ -48,7 +48,7 @@ public class LevelStats : MonoBehaviour
     void Start()
     {
         WaveStatsRefs = GameObject.FindObjectsOfType<WaveStats>();
-        NewWave();
+        //NewWave();
 
     }
 
@@ -59,9 +59,13 @@ public class LevelStats : MonoBehaviour
 
     public void NewWave()
     {
-            WaveStatsRefs[CurrentWave].CheckWave();
-        
-
-
+        Debug.Log("pushed");
+        if (CurrentEnemies == 0)
+        {
+            for (int i = 0; i < WaveStatsRefs.Length; i++)
+            {
+                WaveStatsRefs[i].CheckWave(CurrentWave);
+            }
+        }
     }
 }

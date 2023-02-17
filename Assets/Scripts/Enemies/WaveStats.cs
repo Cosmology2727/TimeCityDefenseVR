@@ -21,10 +21,15 @@ public class WaveStats : MonoBehaviour
 
     [SerializeField]
     public int HowManyToSpawn = 10;
+    [System.NonSerialized]
+    public bool HasItSpawnedYet = false;
 
 
     [System.NonSerialized]
     public GameObject LevelStatsObj;
+
+    [System.NonSerialized]
+    public bool WaveGo = false;
 
     void Start()
     {
@@ -41,7 +46,7 @@ public class WaveStats : MonoBehaviour
     {
         //Debug.Log(HowMuchTime);
         HowMuchTime -= 1 * Time.deltaTime;
-        if (HowMuchTime <= 0 && HowManyToSpawn >= 1)
+        if (HowMuchTime <= 0 && HowManyToSpawn >= 1 && WaveGo == true)
         {
             HowManyToSpawn -= 1;
             HowMuchTime = TimeBetweenSpawns;
@@ -53,9 +58,17 @@ public class WaveStats : MonoBehaviour
         }
     }
 
-    public void CheckWave()
+    public void CheckWave(int CurrentWave)
     {
-        Debug.Log("wave checked" + ThisWave);
+        if (ThisWave == CurrentWave)
+        {
+            if (HasItSpawnedYet == false)
+            {
+                WaveGo = true;
+                Debug.Log("wave checked" + ThisWave);
+                FindObjectOfType<LevelStats>().GetComponent<LevelStats>().EnemiesToSpawn = HowManyToSpawn;
+                HasItSpawnedYet = true;
+            }
+        }
     }
-
 }

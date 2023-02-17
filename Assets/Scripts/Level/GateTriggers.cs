@@ -11,7 +11,7 @@ public class GateTriggers : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("trigger enter");
-        if (other.gameObject.tag == "Enemy")
+        if (other.gameObject.tag == "Enemy" && other.transform.root.GetComponent<EnemyAI>() != null)
         {
             //Debug.Log("enemy trigger");
             if ((IsRanged == true) && (other.transform.root.GetComponent<EnemyAI>().IsRangedAttack == true))
