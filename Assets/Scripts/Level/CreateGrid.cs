@@ -54,7 +54,7 @@ public class CreateGrid : MonoBehaviour
                     //This is for creating the level grid
                     LevelTilePos = new Vector3 (0f, 0f, 0f);
                     LevelTilePos.x += x * 2;
-                    LevelTilePos.y += y * 2;
+                    LevelTilePos.z += y * 2;
                     var NewLevelTile = Instantiate(LevelTilePrefab, LevelTilePos, Quaternion.identity);
                     NewLevelTile.transform.GetComponent<LevelTileStats>().CoordX = x + 1f;
                     NewLevelTile.transform.GetComponent<LevelTileStats>().CoordZ = y + 1f;

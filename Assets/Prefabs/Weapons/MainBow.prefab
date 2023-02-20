@@ -896,7 +896,7 @@ GameObject:
   - component: {fileID: 178823458294651946}
   - component: {fileID: 2945016489945530336}
   m_Layer: 7
-  m_Name: DemoBow
+  m_Name: MainBow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
