@@ -11,9 +11,9 @@ public class CreateGrid : MonoBehaviour
     public bool CreationDone = false;
 
     [System.NonSerialized]
-    public int MaxX = 30;
+    public int MaxX = 25;
     [System.NonSerialized]
-    public int MaxY = 25;
+    public int MaxY = 18;
     [System.NonSerialized]
     public float CurrentX;
     [System.NonSerialized]
