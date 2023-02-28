@@ -16,6 +16,8 @@ public class ButtonScript : MonoBehaviour
 
     public UnityEvent onPressed, onReleased;
 
+    public int Cooldown = 0;
+
 
     void Start()
     {
@@ -26,6 +28,7 @@ public class ButtonScript : MonoBehaviour
 
     void Update()
     {
+        Cooldown -= 1;
         if (!IsPressed && GetValue() + Threshold >= 1)
         {
             Pressed();
@@ -49,15 +52,19 @@ public class ButtonScript : MonoBehaviour
     private void Pressed()
     {
         IsPressed = true;
-        onPressed.Invoke();
-        Debug.Log("Is Pressed");
+        if (Cooldown <= 0)
+        {
+            onPressed.Invoke();
+            Cooldown = 60;
+        }
+        //Debug.Log("Is Pressed");
     }
 
     private void Released()
     {
         IsPressed = false;
         onReleased.Invoke();
-        Debug.Log("Is Released");
+        //Debug.Log("Is Released");
     }
 
 

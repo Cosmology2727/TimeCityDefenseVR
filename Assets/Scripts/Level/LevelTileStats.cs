@@ -11,18 +11,13 @@ public class LevelTileStats : MonoBehaviour
 
     [SerializeField]
     public GameObject MapRef;
+    [SerializeField]
+    public GameObject CreateGridRef;
 
-    [System.NonSerialized]
-    public GameObject CurrentTower;
-
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    public int WallHeight;
+    [SerializeField]
+    public GameObject WallOrOtherObj;
+    [SerializeField]
+    public GameObject TowerOrStairsObj;
 }

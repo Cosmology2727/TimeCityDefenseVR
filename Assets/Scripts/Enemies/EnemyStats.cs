@@ -5,6 +5,11 @@ using HurricaneVR.Framework.Weapons.Guns;
 
 public class EnemyStats : MonoBehaviour
 {
+    [System.NonSerialized]
+    public LevelStats LevelStatsRef;
+    [System.NonSerialized]
+    public LevelMultipliers LevelMultipliersRef;
+
     [SerializeField]
     public GameObject ThisObj;
 
@@ -12,6 +17,11 @@ public class EnemyStats : MonoBehaviour
     public int EnemyHealth = 100;
     [SerializeField]
     public int EnemyArmor = 0;
+
+    [SerializeField]
+    public int MatsEarned = 100;
+    [SerializeField]
+    public int EnergyEarned = 10;
 
     [SerializeField]
     public int EnemyDamage = 10;
@@ -25,34 +35,59 @@ public class EnemyStats : MonoBehaviour
     [SerializeField]
     public GameObject BitsFX;
 
+    [System.NonSerialized]
+    public bool HasItRun = false;
+
+    [System.NonSerialized]
+    public bool IsDead = false;
+
 
 
     void Start()
     {
-        //EnemyHealth *= FindObjectOfType<ListVariables>().GetComponent<ListVariables>().Difficulty;
+        if (HasItRun == false)
+        {
+            LevelStatsRef = FindObjectOfType<LevelStats>().GetComponent<LevelStats>();
+            LevelMultipliersRef = FindObjectOfType<LevelMultipliers>().GetComponent<LevelMultipliers>();
+
+            //Debug.Log("Enemy start before " + LevelStatsRef.CurrentEnemies + " " + LevelStatsRef.EnemiesToSpawn);
+            LevelStatsRef.CurrentEnemies += 1;
+            //Debug.Log("Enemy start after " + LevelStatsRef.CurrentEnemies + " " + LevelStatsRef.EnemiesToSpawn);
+            LevelStatsRef.EnemiesToSpawn -= 1;
+            //EnemyHealth *= FindObjectOfType<ListVariables>().GetComponent<ListVariables>().Difficulty;
+            LevelStatsRef.UpdateText();
+
+            HasItRun = true;
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-
-    }
-
+    
     public void OnDeath()
     {
-        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies -= 1;
-        if ((FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies + FindObjectOfType<LevelStats>().GetComponent<LevelStats>().EnemiesToSpawn) == 0)
+        if (IsDead == false)
         {
-            FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentWave += 1;
-            if (FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentWave > FindObjectOfType<LevelStats>().GetComponent<LevelStats>().TotalWaves)
+            IsDead = true;
+            //Debug.Log(LevelStatsRef.CurrentMats + " + " + MatsEarned + " = " + MatsEarned * LevelMultipliersRef.EarnedMatsMult + " " + Mathf.FloorToInt(MatsEarned * LevelMultipliersRef.EarnedMatsMult));
+            LevelStatsRef.CurrentMats += Mathf.FloorToInt(MatsEarned * LevelMultipliersRef.EarnedMatsMult);
+            LevelStatsRef.CurrentEnergy += Mathf.FloorToInt(EnergyEarned * LevelMultipliersRef.EarnedEnergyMult);
+            LevelStatsRef.EnemiesKilled += 1;
+
+            //Debug.Log("Enemy death before " + LevelStatsRef.CurrentEnemies + " " + LevelStatsRef.EnemiesToSpawn);
+            LevelStatsRef.CurrentEnemies -= 1;
+            //Debug.Log("Enemy death after " + LevelStatsRef.CurrentEnemies + " " + LevelStatsRef.EnemiesToSpawn);
+            if ((LevelStatsRef.CurrentEnemies + LevelStatsRef.EnemiesToSpawn) <= 0)
+            {
+                LevelStatsRef.CurrentWave += 1;
+                if (LevelStatsRef.CurrentWave > LevelStatsRef.TotalWaves)
                 {
-                Debug.Log("WINNER WINNER CHICKEN DINNER");
+                    LevelStatsRef.TextCurrentWave.text = "WIN";
                 }
+            }
+            LevelStatsRef.UpdateText();
+            GameObject DeathVFX = Instantiate(DeathFX, this.transform.position, this.transform.rotation);
+            DeathVFX.transform.localScale *= 1.2f;
+            GameObject BitsVFX = Instantiate(BitsFX, this.transform.position, this.transform.rotation);
+            Destroy(ThisObj);
         }
-        GameObject DeathVFX = Instantiate(DeathFX, this.transform.position, this.transform.rotation);
-        DeathVFX.transform.localScale *= 1.2f;
-        GameObject BitsVFX = Instantiate(BitsFX, this.transform.position, this.transform.rotation);
-        Destroy(ThisObj);
     }
 }

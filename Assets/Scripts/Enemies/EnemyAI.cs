@@ -32,8 +32,6 @@ public class EnemyAI : MonoBehaviour
 
     void Start()
     {
-        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().CurrentEnemies += 1;
-        FindObjectOfType<LevelStats>().GetComponent<LevelStats>().EnemiesToSpawn -= 1;
         ThisAgent = GetComponent<NavMeshAgent>();
         ThisAgent.destination = ThisDestination.transform.position;
         //Debug.Log(ThisAgent.destination);

@@ -535,6 +535,8 @@ MonoBehaviour:
   ThisObj: {fileID: 8146987677447950078}
   EnemyHealth: 100
   EnemyArmor: 0
+  MatsEarned: 100
+  EnergyEarned: 10
   EnemyDamage: 10
   IsMech: 1
   DeathFX: {fileID: 389972561583142955, guid: 42618f1837390f446a6cb82e734d8431, type: 3}

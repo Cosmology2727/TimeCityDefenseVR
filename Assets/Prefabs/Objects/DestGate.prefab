@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 1963010341386559580}
   - component: {fileID: 8127518854203622486}
   - component: {fileID: 7538046930202444196}
+  - component: {fileID: 2295042961780623182}
   m_Layer: 15
   m_Name: DestGate
   m_TagString: DestinationGate
@@ -330,6 +331,22 @@ MonoBehaviour:
   GateVisual: {fileID: 7197755855965021882}
   ExplodeGate: {fileID: 389972561583142955, guid: 62480da11af0eb54c8f6cca8d0e0bcb9, type: 3}
   HitFX: {fileID: 416251089823111746, guid: 8085f81fbd4b4a1459a073afd9228fe6, type: 3}
+--- !u!208 &2295042961780623182
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5676527872526383065}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.5, y: 0.5, z: 0.1}
+  m_MoveThreshold: 0.1
+  m_Carve: 0
+  m_CarveOnlyStationary: 1
+  m_Center: {x: 0, y: 0, z: 0}
+  m_TimeToStationary: 0.5
 --- !u!1 &7014739212120117730
 GameObject:
   m_ObjectHideFlags: 0
